@@ -1,0 +1,14 @@
+Demo Video:
+https://drive.google.com/file/d/197JbrWlsjOTP5BVA6BNLCXFL0bzNRHMV/view?usp=sharing
+
+UE4 Blue Noise Plugin
+
+Built from UE4 4.20 fork
+
+The main ideas of the project comes from here:
+https://blog.demofox.org/2017/10/20/generating-blue-noise-sample-points-with-mitchells-best-candidate-algorithm/
+
+The white noise generator was made from UE4 blueprint nodes, while the blue noise involved making a custom node.
+The code for the custom bluenoise node was wrapped into a plugin. 
+
+
