@@ -1,0 +1,26 @@
+\\\\\\\Assignment 1///////// 
+CS 491/691 Computer Graphics
+Rizheng Sun rizheng1@umbc.edu
+Epic Games ID: WheresMyHPBar
+
+\\\\\\\\PC Specs////////
+CPU: INTEL 4th gen i5
+GPU: NIVIDIA GEFORCE GTX 970
+RAM: 16g (4x4) dram
+OS: Windows 10
+
+\\\\\\\Assignment 1 Requested Info/////
+
+r.SetRes: 1280x720
+
+Sample run times included in github branch as png files.
+
+Averages:
+
+Baseline - 2.88ms
+Computed - 4.69ms
+Baked -    3.15ms
+
+Video Link:
+
+https://drive.google.com/open?id=1pBrjSIWTHzhZ4Jnf5uJ5QRHms14Mma5P

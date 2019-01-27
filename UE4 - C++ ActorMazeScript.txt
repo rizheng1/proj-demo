@@ -1,0 +1,34 @@
+
+Text Document For assn2
+
+Rizheng Sun 9/30/18
+
+
+
+Broke editor, fixed with rebuild. 
+
+
+
+What currently works: 
+
+
+Generate a 10x10 grid.
+
+Use Prim's Algo to generate a maze at play.
+
+
+
+What partially works:
+
+
+Maze size parameter refresh in editor (Overloaded PostEditChangeProperty)
+
+
+
+What doesn't work:
+
+Reconstrction of maze after property refresh
+
+
+Video Link:
+https://drive.google.com/open?id=1DHUYOa1xbwpywt1fqBvHb-ZAgfCBXLrQ
