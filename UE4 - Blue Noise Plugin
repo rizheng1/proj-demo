@@ -3,12 +3,15 @@ https://drive.google.com/file/d/197JbrWlsjOTP5BVA6BNLCXFL0bzNRHMV/view?usp=shari
 
 UE4 Blue Noise Plugin
 
-Built from UE4 4.20 fork
+Files Avaliable 
+Built to work with UE4 4.20 fork
 
 The main ideas of the project comes from here:
 https://blog.demofox.org/2017/10/20/generating-blue-noise-sample-points-with-mitchells-best-candidate-algorithm/
 
-The white noise generator was made from UE4 blueprint nodes, while the blue noise involved making a custom node.
-The code for the custom bluenoise node was wrapped into a plugin. 
+The white noise generator in the demo video was made from UE4 blueprint nodes only. The plugin file
+containt the blue noise generator node. Note that when you use the node, you need to give the actor an array and
+hook it up to the blue noise node so that it can keep track of the provious nodes it has used.
+
 
 
