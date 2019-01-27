@@ -1,9 +1,17 @@
 Hello! My name is Bright Sun and you have reached my projects demo page! 
+
 Here you will find a bunch of text files, each containing a description of the corresponding project
-as well as a video link to a demo of it. 
-The file you are currently looking at is the index.
+as well as a video link to a demo of the corresponding project. 
+The file you are currently looking at is acting as an index of all the various projects I've taken on relating to graphics/game dev.
 
 Most the of the projects shown here are in a private repo someonewhere in my github. 
-Please 
+If the files are not in a folder here, then chances are they are part of a fork of something.
+If you would like access to the source, feel free to contact me.
 
-1. 
+1. UE4 - Blue Noise Plugin
+
+2. UE4 - Lightmass Gravitational Lensing
+
+3. UE4 - Maze Actor/Actor Scripting
+
+4. UE4 - Postprocess Pixel Shader Pass
