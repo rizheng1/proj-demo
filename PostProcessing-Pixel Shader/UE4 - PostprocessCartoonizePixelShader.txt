@@ -1,0 +1,24 @@
+assn4 
+Rizheng Sun 
+CS491 Gaming Graphics 
+
+Pass Placement Explaination:
+
+  I decided to place my pass after Anti-Aliasing and before Motion Blur 
+because I wanted motion blur to not be quantized by the postprocess and look 
+normal. It didn't really matter that AA happens before it, my process just
+had to be before motion blur.
+
+What works:
+all undergrad portions
+hooking into postprocessing.cpp
+creating sobel edges from colormap
+creating sobel edges from depthmap
+convert sobel edges to outlines
+quantizing luminence
+
+What doesnt work:
+deriving a sobel edge from normal
+
+video link:
+https://drive.google.com/open?id=1J9tSpEAb3WtQdHn4xMPiQwKJjQOxpenX

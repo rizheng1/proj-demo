@@ -1,0 +1,34 @@
+CMSC 491 / Graphics for Games
+Assignment 4 Grading Rubric
+
+25/25 - Basics
+    5/5 - Created assn4 project and map
+    5/5 - Necessary files checked in (uproject, Config/, Content/, 
+         changed engine files)
+    5/5 - Transient files not checked in (including Binaries/,
+         DerivedDataCache/, Intermediate/, Saved/, etc.)
+    5/5 - Multiple checkins during development
+    5/5 - Did not use github web upload
+20/20 - PostProcessing.cpp changes
+    5/5 - Create CVar, enable based on it
+    5/5 - Register pass
+    5/5 - Context.FinalOutput as Input0, Context.SceneDepth as Input1
+    5/5 - Context.FinalOutput updated to pass output
+30/30 - New Pass
+    5/5 - Shader::ShouldCompilePermutation and ModifyCompilationEnvironment
+    5/5 - Shader::Constructor w/ necessary Binds, Serialize
+    5/5 - Shader::SetParameters (could move to Process)
+    5/5 - Pass::ComputeOutputDesc
+    5/5 - Pass::Process SetRenderTarget, SetViewport (or UAV for CS)
+    5/5 - Pass::Process Set Pipeline State, Draw, Resolve
+10/10 - Cartoon Look
+    5/5 - Sobel depth edges
+    5/5 - Quantize luminance
+15/15 - Results
+    5/5 - assn4.txt file committed
+    5/5 - Relevant comments in assn4.txt
+    5/5 - Include link to video file demonstrating project
+----
+100/100 - Total
+
+

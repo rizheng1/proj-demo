@@ -1,0 +1,58 @@
+
+/*=============================================================================
+	PostProcessCartoonize.usf: assn4 Rizheng Sun. derived from lensflare
+=============================================================================*/
+
+#include "Common.ush"
+#include "PostProcessCommon.ush"
+#include "DeferredShadingCommon.ush"
+// pixel shader entry point
+void MainPS(in float4 InUV : TEXCOORD0, in float4 InPosition : ATTRIBUTE0, out float4 OutColor : SV_Target0)
+{
+// lumi quantization
+
+	OutColor = Texture2DSample(PostprocessInput0, PostprocessInput0Sampler, InUV.xy);
+
+	float3 lumi = RGBToYCoCg(OutColor.rgb);
+
+	lumi.x = floor(lumi.x*10)/10;
+
+	OutColor.rgb = YCoCgToRGB(lumi);
+
+
+// Outlines Begin
+
+// Calculating Coordinates for Sobel Filter
+
+	float hinc = PostprocessInput0Size.w;
+	float winc = PostprocessInput0Size.z;
+	float2 up  = float2(InUV.x, InUV.y + hinc);
+	float2 down  = float2(InUV.x, InUV.y - hinc);
+	float2 right  = float2(InUV.x + winc, InUV.y);
+	float2 left  = float2(InUV.x - winc, InUV.y);
+
+// Pseudo Sobel Filter
+	//color
+	float4 c1 = Texture2DSample(PostprocessInput0, PostprocessInput0Sampler, up);
+	float4 c2 = Texture2DSample(PostprocessInput0, PostprocessInput0Sampler, down);
+	float4 c3 = Texture2DSample(PostprocessInput0, PostprocessInput0Sampler, right);
+	float4 c4 = Texture2DSample(PostprocessInput0, PostprocessInput0Sampler, left);
+	float4 colorsobel = (c1 - c2 + c3 - c4)/2;
+
+	//depth
+	float4 d1 = Texture2DSample(PostprocessInput1, PostprocessInput1Sampler, up);
+	float4 d2 = Texture2DSample(PostprocessInput1, PostprocessInput1Sampler, down);
+	float4 d3 = Texture2DSample(PostprocessInput1, PostprocessInput1Sampler, right);
+	float4 d4 = Texture2DSample(PostprocessInput1, PostprocessInput1Sampler, left);
+	float4 depthsobel = (d1 - d2 + d3 - d4)/2;
+
+// Use this to adjust outline size (smaller = thicker)
+	float thresh = 0.1;
+	float thresh2 = 0.1;
+	OutColor.a = 1.0;
+
+	if((abs(colorsobel.r) > thresh || abs(colorsobel.g) > thresh || abs(colorsobel.b) > thresh) || (abs(depthsobel.r) > thresh2)){
+		OutColor = float4(0.0, 0.0, 0.0, 1.0);
+	} 
+}
+
